@@ -43,7 +43,7 @@ plt.plot(X,Y_pred,color="red")
 plt.show()
 ```
 ## Output:
-[best fit line]![Screenshot 2024-08-29 233359](https://github.com/user-attachments/assets/f30c02ee-3953-4182-8ec8-351a0e3d9863)
+![best fit line]![Screenshot 2024-08-29 233359](https://github.com/user-attachments/assets/f30c02ee-3953-4182-8ec8-351a0e3d9863)
 
 
 
