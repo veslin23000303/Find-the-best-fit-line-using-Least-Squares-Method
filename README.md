@@ -7,6 +7,8 @@ To implement univariate Linear Regression to fit a straight line using least squ
 2. Anaconda – Python 3.7 Installation / Jupyter notebook
 
 ## Algorithm
+
+## Algorithm
 1. Get the independent variable X and dependent variable Y.
 2. Calculate the mean of the X -values and the mean of the Y -values.
 3. Find the slope m of the line of best fit using the formula. 
@@ -20,31 +22,60 @@ To implement univariate Linear Regression to fit a straight line using least squ
 ```
 /*
 Program to implement univariate Linear Regression to fit a straight line using least squares.
-Developed by: VESLIN ANISH A
-RegisterNumber:  212223240175
+
 */
+
 import numpy as np
 import matplotlib.pyplot as plt
+
+#preprocessing input data
+
 X=np.array(eval(input()))
 Y=np.array(eval(input()))
-Xmean=np.mean(X)
-Ymean=np.mean(Y)
-num,den=0,0 # num = numerator, den = denomenator
-for i in range(len(X)):
-  num+=(X[i]-Xmean)*(Y[i]-Ymean)
-  den+=(X[i]-Xmean)**2
-m=num/den
-c=Ymean-m*Xmean
-print(m,c)
-Y_pred=m*X+c
-print(Y_pred)
-plt.scatter(X,Y)
-plt.plot(X,Y_pred,color="red")
-plt.show()
-```
-## Output:
-![best fit line]![Screenshot 2024-08-29 233359](https://github.com/user-attachments/assets/f30c02ee-3953-4182-8ec8-351a0e3d9863)
 
+
+#mean
+
+X_mean=np.mean(X)
+Y_mean=np.mean(Y)
+num=0 #for slope
+denom=0 #for slope
+
+
+#to find sum of (xi-x') & (yi-y') & (xi-x')^2
+for i in range(len(X)):
+    num+=(X[i]-X_mean)*(Y[i]-Y_mean)
+    denom+=(X[i]-X_mean)**2
+
+
+#to find slope
+
+m=num/denom
+b=Y_mean-m*X_mean
+print(m,b)
+
+#to find predicted value
+ 
+Y_predicted=m*X+b
+print(Y_predicted)
+
+
+#to plot graphplt.scatter(X,Y)
+
+plt.plot(X,Y_predicted,color="red")
+plt.show()
+
+```
+
+## Output:
+# SLOPE AND Y-INTERCEPT:
+![Screenshot 2024-08-23 105446](https://github.com/user-attachments/assets/ec7cdb04-e2c5-4981-a98f-226160c3eb41)
+
+# Y PREDICTED:
+![Screenshot 2024-08-23 105452](https://github.com/user-attachments/assets/589b2574-03d5-48e8-8459-acd8a5938197)
+
+# GRAPH:
+![Screenshot 2024-08-23 105459](https://github.com/user-attachments/assets/bc7bd28d-0caa-41c7-816a-6198d90317c9)
 
 
 ## Result:
